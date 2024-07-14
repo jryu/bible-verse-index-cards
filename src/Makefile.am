@@ -6,4 +6,5 @@ BUILT_SOURCES = config.pb.cc
 
 noinst_PROGRAMS = renderer
 renderer_SOURCES = main.cpp config.pb.cc config.pb.h
-renderer_LDADD = $(PROTOBUF_LIBS)
+renderer_CPPFLAGS = $(CAIRO_CFLAGS)
+renderer_LDADD = $(CAIRO_LIBS) $(PROTOBUF_LIBS)

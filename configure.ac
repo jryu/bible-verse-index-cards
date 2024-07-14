@@ -5,6 +5,7 @@ AC_CONFIG_SRCDIR([src/main.cpp])
 
 AC_PROG_CXX
 
+PKG_CHECK_MODULES([CAIRO], [pangocairo])
 PKG_CHECK_MODULES([PROTOBUF], [protobuf])
 
 AC_CONFIG_FILES([Makefile])

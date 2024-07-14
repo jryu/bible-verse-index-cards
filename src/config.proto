@@ -8,9 +8,13 @@ message Card {
 message RendererConfig {
   repeated Card cards = 1;
 
-  optional string text_font_family = 2;
-  optional double text_font_size = 3;
+  optional int32 card_width = 2;
+  optional int32 card_height = 3;
+  optional int32 margin = 4;
 
-  optional string footer_font_family = 4;
-  optional double footer_font_size = 5;
+  optional string text_font_family = 5;
+  optional double text_font_size = 6;
+
+  optional string footer_font_family = 7;
+  optional double footer_font_size = 8;
 }
