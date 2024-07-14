@@ -1,0 +1,16 @@
+package config;
+
+message Card {
+  repeated string text = 1;
+  optional string footer = 2;
+}
+
+message RendererConfig {
+  repeated Card cards = 1;
+
+  optional string text_font_family = 2;
+  optional double text_font_size = 3;
+
+  optional string footer_font_family = 4;
+  optional double footer_font_size = 5;
+}

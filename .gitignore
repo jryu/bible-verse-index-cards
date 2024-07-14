@@ -60,6 +60,10 @@ Makefile
 *.obj
 *.elf
 
+# Protocol Buffer
+*.pb.h
+*.pb.cc
+
 # Precompiled Headers
 *.gch
 *.pch
