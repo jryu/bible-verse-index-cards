@@ -2,11 +2,14 @@
 #include <fcntl.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 #include <google/protobuf/text_format.h>
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
 #include <stdio.h>
 
 #include "config.pb.h"
 
 config::RendererConfig conf;
+auto console = spdlog::stdout_color_mt("console");
 
 bool parse_config() {
   // Verify that the version of the library that we linked
@@ -16,7 +19,8 @@ bool parse_config() {
 
   int fd = open("config.txt", O_RDONLY);
   if (fd < 0) {
-    // TODO: Log error message.
+    console->error("Cannot read config.txt: {}",
+        strerror(errno));
     return false;
   }
   google::protobuf::io::FileInputStream fileInput(fd);
