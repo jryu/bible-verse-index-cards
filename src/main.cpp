@@ -2,6 +2,7 @@
 #include <cairo-pdf.h>
 #include <cstdlib>
 #include <fcntl.h>
+#include <gflags/gflags.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 #include <google/protobuf/text_format.h>
 #include <pango/pangocairo.h>
@@ -10,6 +11,12 @@
 #include <stdio.h>
 
 #include "config.pb.h"
+
+DEFINE_string(config_file_name, "config_niv.txt",
+    "Name of a configuration file.");
+
+DEFINE_string(output_file_name, "verse_cards_niv.pdf",
+    "Name of a output file.");
 
 config::RendererConfig conf;
 auto console = spdlog::stdout_color_mt("console");
@@ -21,7 +28,7 @@ bool parse_config()
   // compiled against.
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  int fd = open("config.txt", O_RDONLY);
+  int fd = open(FLAGS_config_file_name.c_str(), O_RDONLY);
   if (fd < 0) {
     console->error("Cannot read config.txt: {}",
         strerror(errno));
@@ -169,13 +176,16 @@ void render_card(cairo_t *cr, const config::Card& card)
 
 int main(int argc, char *argv[])
 {
+  gflags::ParseCommandLineFlags(&argc, &argv, true);
+
   if (!parse_config()) {
     return EXIT_FAILURE;
   }
 
   cairo_surface_t *surface = NULL;
-  surface = cairo_pdf_surface_create("example.pdf",
-      conf.card_width(), conf.card_height());
+  surface =
+    cairo_pdf_surface_create(FLAGS_output_file_name.c_str(),
+        conf.card_width(), conf.card_height());
   cairo_t *cr = cairo_create(surface);
 
   for (const config::Card& card : conf.cards()) {

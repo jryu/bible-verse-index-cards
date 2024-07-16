@@ -2,10 +2,16 @@ card_width: 360
 card_height: 216
 margin: 20
 
-text_font_family: "New Rocker"
-text_font_size: 14
+# text_font_family: "Arsenal"
+# text_font_family: "New Rocker"
+# text_font_size: 14
 
-footer_font_family: "Faster One"
+text_font_family: "Laila"
+text_font_size: 12
+
+# footer_font_family: "Faster One"
+
+footer_font_family: "Open Sans"
 footer_font_size: 10
 
 cards {
@@ -29,4 +35,98 @@ cards {
   text: "Very truly I tell you, whoever hears my word and believes him who sent me"
   text: "has eternal life and will not be judged"
   text: "but has crossed over from death to life."
+}
+cards {
+  footer: "1 Chronicles 29:11"
+  text: "Yours, LORD, is the greatness and the power and the glory"
+  text: "and the majesty and the splendor, for everything in heaven and earth is yours."
+  text: "Yours, LORD, is the kingdom; you are exalted as head over all."
+}
+cards {
+  footer: "Psalms 36:5-6"
+  text: "Your love, Lord, reaches to the heavens, your faithfulness to the skies. Your righteousness is like the highest mountains, your justice like the great deep. You, Lord, preserve both people and animals."
+}
+cards {
+  footer: "2 Timothy 3:16"
+  text: "All Scripture is God-breathed and is useful for"
+  text: "teaching, rebuking, correcting and training in righteousness."
+}
+cards {
+  footer: "1 Peter 2:2"
+  text: "Like newborn babies, crave pure spiritual milk, so that by it you may grow up in your salvation."
+}
+cards {
+  footer: "John 15:7"
+  text: "If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you."
+}
+cards {
+  footer: "Philippians 4:6-7"
+  text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."
+  text: "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus."
+}
+cards {
+  footer: "Romans 12:4-5"
+  text: "For just as each of us has one body with many members, and these members do not all have the same function, so in Christ we, though many, form one body, and each member belongs to all the others."
+}
+cards {
+  footer: "John 13:34-35"
+  text: "A new command I give you: Love one another. As I have loved you, so you must love one another. By this everyone will know that you are my disciples, if you love one another."
+}
+cards {
+  footer: "Romans 1:16"
+  text: "For I am not ashamed of the gospel, because it is the power of God that brings salvation"
+  text: "to everyone who believes: first to the Jew, then to the Gentile."
+}
+cards {
+  footer: "1 Peter 3:15"
+  text: "But in your hearts revere Christ as Lord. Always be prepared to give an answer to everyone"
+  text: "who asks you to give the reason for the hope that you have. But do this with gentleness and respect"
+}
+cards {
+  footer: "Ephesians 5:18"
+  text: "Do not get drunk on wine, which leads to debauchery."
+  text: "Instead, be filled with the Spirit"
+}
+cards {
+  footer: "Galatians 5:22-23"
+  text: "But the fruit of the Spirit is"
+  text: " "
+  text: "love, joy, peace, forbearance, kindness,"
+  text: "goodness, faithfulness, gentleness and self-control."
+  text: " "
+  text: "Against such things there is no law."
+}
+cards {
+  footer: "1 Corinthians 10:13"
+  text: "No temptation has overtaken you"
+  text: "except what is common to mankind."
+  text: "And God is faithful; he will not let you be tempted beyond what you can bear. But when you are tempted, he will also provide a way out so that you can endure it."
+}
+cards {
+  footer: "James 1:14-15"
+  text: "but each person is tempted when they are dragged away"
+  text: "by their own evil desire and enticed."
+  text: "Then, after desire has conceived, it gives birth to sin;"
+  text: "and sin, when it is full-grown, gives birth to death."
+}
+cards {
+  footer: "Romans 12:1"
+  text: "Therefore, I urge you, brothers and sisters, in view of God’s mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship."
+}
+cards {
+  footer: "Luke 9:23"
+  text: "Then he said to them all: Whoever wants to be my disciple must deny themselves"
+  text: "and take up their cross daily and follow me."
+}
+cards {
+  footer: "1 Peter 2:9"
+  text: "But you are a chosen people, a royal priesthood,"
+  text: "a holy nation, God’s special possession,"
+  text: "that you may declare the praises of him"
+  text: "who called you out of darkness into his wonderful light."
+}
+cards {
+  footer: "1 Corinthians 3:9"
+  text: "For we are co-workers in God’s service;"
+  text: "you are God’s field, God’s building."
 }
