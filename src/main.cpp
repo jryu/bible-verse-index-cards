@@ -79,9 +79,12 @@ int break_lines(cairo_t *cr, const std::string& input,
   std::string text = input;
   int total_height = 0;
   for (int i = text.length() - 1; i >= 0; --i) {
-    if (std::ispunct(text[i])) {
+    if (i == text.length() - 1 || std::ispunct(text[i])) {
+      if (std::ispunct(text[i])) {
+        console->info("Punct: {} {}", i, text[i]);
+      }
       std::string substr = text.substr(0, i + 1);
-      console->info("Punct: {} {}", i, text[i]);
+
       int width, height;
       get_text_size(cr, substr, &width, &height);
       if (width <= conf.card_width() - conf.margin()) {
@@ -91,7 +94,7 @@ int break_lines(cairo_t *cr, const std::string& input,
 
         // Initialize for-loop variables with new text
         text = trim(text.substr(i + 1, text.length() - i - 1));
-        i = text.length() - 1;
+        i = text.length();
         console->info("text: {}", text);
       }
     }
