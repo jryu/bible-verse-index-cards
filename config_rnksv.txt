@@ -3,7 +3,7 @@ card_height: 216
 margin: 20
 
 text_font_family: "Nanum HimNaeRaNeunMarBoDan"
-text_font_size: 16
+text_font_size: 18
 
 footer_font_family: "NanumGothic"
 footer_font_size: 10
@@ -130,7 +130,10 @@ cards {
 cards {
   footer_left: "순종하는 삶"
   footer_right: "로마서 12:1"
-  text: "형제자매 여러분, 그러므로 나는 하나님의 자비하심을 힘입어 여러분에게 권합니다. 여러분의 몸을 하나님께서 기뻐하실 거룩한 산 제물로 드리십시오. 이것이 여러분이 드릴 합당한 예배입니다."
+  text: "형제자매 여러분, 그러므로 나는 하나님의 자비하심을 힘입어"
+  text: "여러분에게 권합니다."
+  text: "여러분의 몸을 하나님께서 기뻐하실"
+  text: "거룩한 산 제물로 드리십시오. 이것이 여러분이 드릴 합당한 예배입니다."
 }
 cards {
   footer_left: "순종하는 삶"
