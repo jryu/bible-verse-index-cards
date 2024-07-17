@@ -3,7 +3,7 @@ card_height: 216
 margin: 20
 
 text_font_family: "Nanum HimNaeRaNeunMarBoDan"
-text_font_size: 18
+text_font_size: 17
 
 footer_font_family: "NanumGothic"
 footer_font_size: 10
