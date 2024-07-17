@@ -21,6 +21,8 @@ DEFINE_string(output_file_name, "verse_cards_niv.pdf",
 config::RendererConfig conf;
 auto console = spdlog::stdout_color_mt("console");
 
+enum Align { LEFT, RIGHT };
+
 bool parse_config()
 {
   // Verify that the version of the library that we linked
@@ -120,7 +122,7 @@ int break_lines(cairo_t *cr, const std::string& input,
   return total_height;
 }
 
-int draw_footer(cairo_t *cr, const std::string& text)
+int draw_footer(cairo_t *cr, const std::string& text, Align align)
 {
   PangoLayout *layout = init_pango_layout(cr, conf.footer_font_family(),
       conf.footer_font_size(), PANGO_WEIGHT_NORMAL);
@@ -130,10 +132,16 @@ int draw_footer(cairo_t *cr, const std::string& text)
   pango_layout_get_size(layout, &width, &height);
   int margin_bottom = ((double)height / PANGO_SCALE) +
     conf.margin();
-  cairo_move_to(cr,
-      conf.card_width() - ((double)width / PANGO_SCALE) -
-      conf.margin(),
-      conf.card_height() - margin_bottom);
+  int x;
+  switch (align) {
+    case LEFT:
+      x = conf.margin();
+      break;
+    case RIGHT:
+      x = conf.card_width() - ((double)width / PANGO_SCALE) - conf.margin();
+      break;
+  }
+  cairo_move_to(cr, x, conf.card_height() - margin_bottom);
   pango_cairo_show_layout(cr, layout);
 
   g_object_unref(layout);
@@ -148,7 +156,11 @@ void render_card(cairo_t *cr, const config::Card& card)
     total_height += break_lines(cr, text, &lines);
   }
 
-  int margin_bottom = draw_footer(cr, card.footer());
+  int margin_bottom = draw_footer(cr, card.footer_left(), LEFT);
+  if (draw_footer(cr, card.footer_right(), RIGHT) != margin_bottom) {
+    console->error("Left and right footer have different height.");
+    return;
+  }
 
   int y = (conf.card_height() - total_height -
       margin_bottom - conf.margin()) / 2;

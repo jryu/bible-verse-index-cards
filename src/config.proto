@@ -2,7 +2,8 @@ package config;
 
 message Card {
   repeated string text = 1;
-  optional string footer = 2;
+  optional string footer_left = 2;
+  optional string footer_right = 3;
 }
 
 message RendererConfig {
